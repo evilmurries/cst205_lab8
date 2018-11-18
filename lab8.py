@@ -8,23 +8,26 @@ def increaseVolume(sound):
       value = getSampleValue(sample)
       setSampleValue(sample, value * 2)
       
-#Write a function called decreaseVolume that takes a sound object and reduces the volume by half
+#Write a function called decreaseVolume that takes a sound object and reduces 
+#the volume by half
 def decreaseVolume(sound):
    for sample in range(0, getLength(sound)):
       value = getSampleValueAt(sound, sample)
       setSampleValueAt(sound, sample, value * 0.5)
       
-#Write a function called changeVolume that takes a sound object and changes volume by a given factor
+#Write a function called changeVolume that takes a sound object and changes 
+#volume by a given factor
 def changeVolume(sound, factor):
    for sample in range(0, getLength(sound)):
       value = getSampleValueAt(sound, sample)
       setSampleValueAt(sound, sample, value * factor)
 
 #This function retrieves a file and creates a sound out of it
-def getSound():
+def picSound():
   return makeSound(pickAFile())
  
-#Write a function called maxSample that finds the maximum sample value in your sound
+#Write a function called maxSample that finds the maximum sample value 
+#in your sound
 def maxSample(sound):
   maximum = -33000
   for sample in getSamples(sound):
@@ -32,7 +35,7 @@ def maxSample(sound):
     maximum = max(value, maximum)
   return maximum
 
-#Write a new function called maxVolume that increases the volume of each sample 
+#Write a new function called maxVolume that increases the volume of each sample
 #by the factor(factor=float(maxPossibleSampleValue)/largest) where largest is 
 #the value returned by your maxSample function
 def maxVolume(sound):
